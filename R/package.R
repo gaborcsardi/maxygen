@@ -70,21 +70,3 @@ full_markdown_name_description <- function(key, rest) {
   tmp <- full_markdown(key, rest)
   roxygen_function("parse.name.description")(tmp$key, tmp$rest)
 }
-
-
-#' @importFrom commonmark markdown_xml
-#' @importFrom xml2 xml_name
-
-restricted_markdown <- function(key, rest) {
-  print(paste(key, "restricted"))
-  list(key = key, rest = rest)
-}
-
-
-#' @importFrom commonmark markdown_xml
-#' @importFrom xml2 xml_name
-
-full_markdown <- function(key, rest) {
-  print(paste(key, "full"))
-  list(key = key, rest = rest)
-}
