@@ -18,7 +18,8 @@ knitr::opts_chunk$set(
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/maxygen)](http://www.r-pkg.org/pkg/maxygen)
 
 
-Write your Roxygen documentation in Markdown.
+Write your Roxygen documentation in CommonMark Markdown. See
+http://spec.commonmark.org/ for the complete specification.
 
 ## Installation
 
@@ -28,9 +29,125 @@ devtools::install_github("gaborcsardi/maxygen")
 
 ## Usage
 
-```{r}
+```r
 library(maxygen)
+macument(pkg_dir)
 ```
+
+You can use the `macument()` command instead of `devtools::document()` to
+create the Rd documentation from Markdown-Roxygen. `macument()` converts
+the Markdown formatting within the Roxygen comments to proper R manual
+format, and then calls `devtools::document()` itself.
+
+## Markup
+
+### Inline code
+
+Use backticks instead of `\code{}`:
+
+```r
+#' @param ns Optionally, a named vector giving prefix-url pairs, as
+#'   produced by `xml_ns`. If provided, all names will be explicitly
+#'   qualified with the ns prefix, i.e. if the element `bar` is define ...
+```
+
+### Clode blocks
+
+Put your code between three backticks:
+
+```r
+#' ```
+#' pkg <- make_packages(
+#'   foo1 = { f <- function() print("hello!") ; d <- 1:10 },
+#'   foo2 = { f <- function() print("hello again!") ; d <- 11:20 }
+#' )
+#' foo1::f()
+#' foo2::f()
+#' foo1::d
+#' foo2::d
+#' dispose_packages(pkg)
+#' ```
+```
+
+### Lists
+
+Regular Markdown lists are recognized and converted to
+`\enumerate{}` or `\itemize{}` lists:
+
+```r
+#' There are two ways to use this function:
+#' 1. If its first argument is not named, then it returns a function
+#'    that can be used to color strings.
+#' 1. If its first argument is named, then it also creates a
+#'    style with the given name. This style can be used in
+#'    `style`. One can still use the return value
+#'    of the function, to create a style function.
+```
+
+```r
+#' The style (the `...` argument) can be anything of the
+#' following:
+#' * An R color name, see `colors()`.
+#' * A 6- or 8-digit hexa color string, e.g. `#ff0000` means
+#'   red. Transparency (alpha channel) values are ignored.
+#' * A one-column matrix with three rows for the red, green
+#'   and blue channels, as returned by `col2rgb` (in the base
+#'   grDevices package).
+```
+
+Nested lists are also supported.
+
+### Emphasis
+
+Emphasis and strong (bold) text is supported:
+
+```r
+#' See `is_falsy` for the definition of what is _falsy_
+#' and what is _truthy_.
+```
+
+```r
+#' @references
+#' Robert E Tarjan and Mihalis Yannakakis. (1984). Simple
+#' linear-time algorithms to test chordality of graphs, test acyclicity
+#' of hypergraphs, and selectively reduce acyclic hypergraphs.
+#' *SIAM Journal of Computation* **13**, 566-579.
+```
+
+### URLs
+
+URLs are currently not automatically recognized, but Markdown
+links are:
+
+```r
+#'  This dataset is licensed under a Creative Commons
+#'  Attribution-Share Alike 2.0 UK: England & Wales License,
+#'  see [http://creativecommons.org/licenses/by-sa/2.0/uk/]() for details.
+#'  Please cite the reference below if you use this dataset.
+```
+
+### Images
+
+Images are also recognized. The actual files must be in `man/figures`:
+
+```r
+#' Here is an example plot:
+#' ![](example-plot.jpg "Example Plot Title")
+```
+
+## Bugs and glitches
+
+* Once `macument()` is called, all calls to `roxygen::document()`
+  will understand the Markdown formatting.
+* Because Roxygen cannot unregister callbacks, the only way to switch back
+  to _regular_ Roxygen formatting is restarting R.
+* You need to **explicitly** include the `@title`, `@description` and
+  `@details` tags in your documentation. Once
+  [this issue](https://github.com/klutometis/roxygen/issues/364) is
+  fixed, this will not be necessary.
+* Please report other bugs in the
+  [issue tracker](https://github.com/gaborcsardi/maxygen/issues).
+  Thanks!
 
 ## License
 
