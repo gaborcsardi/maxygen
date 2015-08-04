@@ -39,6 +39,9 @@ create the Rd documentation from Markdown-Roxygen. `macument()` converts
 the Markdown formatting within the Roxygen comments to proper R manual
 format, and then calls `devtools::document()` itself.
 
+See [inst/example/R/example.R] and the generated `Rd` files in
+[inst/example/man] for a more complete example.
+
 ## Markup
 
 ### Inline code

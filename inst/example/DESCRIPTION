@@ -1,0 +1,13 @@
+Package: maxygenexample
+Title: Example Package for 'maxygen'
+Version: 1.0.0
+Author: Gabor Csardi
+Maintainer: Gabor Csardi <csardi.gabor@gmail.com>
+Description: 'Maxygen' allows you to write your 'Roxygen' documentation in
+    'Markdown'. This package is an example for it.
+License: MIT + file LICENSE
+LazyData: true
+URL: https://github.com/gaborcsardi/maxygen
+BugReports: https://github.com/gaborcsardi/maxygen/issues
+Suggests: 
+    maxygen
