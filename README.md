@@ -1,27 +1,31 @@
 
-# maxigen
 
-> Markdown + Roxygen = Maxigen
 
-[![Linux Build Status](https://travis-ci.org/gaborcsardi/maxigen.svg?branch=master)](https://travis-ci.org/gaborcsardi/maxigen)
+# maxygen
 
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/gaborcsardi/maxigen?svg=true)](https://ci.appveyor.com/project/gaborcsardi/maxigen)
-[![](http://www.r-pkg.org/badges/version/maxigen)](http://www.r-pkg.org/pkg/maxigen)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/maxigen)](http://www.r-pkg.org/pkg/maxigen)
+> Markdown + Roxygen = Maxygen
+
+[![Linux Build Status](https://travis-ci.org/gaborcsardi/maxygen.svg?branch=master)](https://travis-ci.org/gaborcsardi/maxygen)
+
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/gaborcsardi/maxygen?svg=true)](https://ci.appveyor.com/project/gaborcsardi/maxygen)
+[![](http://www.r-pkg.org/badges/version/maxygen)](http://www.r-pkg.org/pkg/maxygen)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/maxygen)](http://www.r-pkg.org/pkg/maxygen)
 
 
 Write your Roxygen documentation in Markdown.
 
 ## Installation
 
+
 ```r
-devtools::install_github("gaborcsardi/maxigen")
+devtools::install_github("gaborcsardi/maxygen")
 ```
 
 ## Usage
 
+
 ```r
-library(maxigen)
+library(maxygen)
 ```
 
 ## License

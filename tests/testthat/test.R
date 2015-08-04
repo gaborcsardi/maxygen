@@ -1,7 +1,7 @@
 
-context("maxigen")
+context("maxygen")
 
-test_that("maxigen works", {
+test_that("maxygen works", {
 
   expect_true(TRUE)
 

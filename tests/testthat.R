@@ -1,4 +1,4 @@
 library(testthat)
-library(maxigen)
+library(maxygen)
 
-test_check("maxigen")
+test_check("maxygen")
