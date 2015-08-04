@@ -79,11 +79,11 @@ tags <- list(
   },
 
   item = function(xml) {
-    ## A single item within a list. If a single paragraph within an item,
-    ## then remove it to make the Rd look better.
+    ## A single item within a list. We remove the first paragraph
+    ## tag, to avoid an empty line at the beginning of the first item.
     cnts <- xml_children(xml)
-    if (length(cnts) == 1 && xml_name(cnts[[1]]) == "paragraph") {
-      cnts <- xml_contents(cnts[[1]])
+    if (xml_name(cnts[[1]]) == "paragraph") {
+      cnts <- list(xml_contents(cnts[[1]]), cnts[-1])
     }
     list("\n\\item ", cnts)
   },
