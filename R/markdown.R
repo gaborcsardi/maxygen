@@ -12,7 +12,6 @@ full_markdown <- function(key, rest) {
 
 markdown <- function(text, tags) {
   md <- markdown_xml(text, hardbreaks = TRUE)
-  cat(md)
   xml <- read_xml(md)
   trim(markdown_rparse(xml, tags))
 }
