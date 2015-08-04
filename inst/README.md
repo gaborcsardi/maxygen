@@ -48,7 +48,7 @@ Use backticks instead of `\code{}`:
 #'   qualified with the ns prefix, i.e. if the element `bar` is define ...
 ```
 
-### Clode blocks
+### Code blocks
 
 Put your code between three backticks:
 
