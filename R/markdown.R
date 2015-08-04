@@ -16,7 +16,8 @@ markdown <- function(text, tags) {
   trim(markdown_rparse(xml, tags))
 }
 
-#' @importFrom xml2 xml_name
+#' @importFrom xml2 xml_name xml_type xml_text xml_contents xml_attr
+#'   xml_children
 
 markdown_rparse <- function(xml, tags) {
 
