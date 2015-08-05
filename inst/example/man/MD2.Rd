@@ -13,6 +13,6 @@ MD2(x)
 Another example, to have a family
 }
 \seealso{
-Other X.maxygen.examples.: \code{\link{MD}}
+Other maxygen.examples: \code{\link{MD}}
 }
 

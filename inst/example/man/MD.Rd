@@ -84,8 +84,11 @@ Inline code is simple like \code{2 times 2}. Code blocks are also easy:\preforma
 
 \section{Links}{
 
-This is just a link: \url{http://igraph.org}.
-This is another link: \href{http://igraph.org}{igraph}.
+Link to another manual page: \code{\link{MD2}}.
+Link to a manual page from another package: \code{\link[maxygen]{macument}}.
+
+This is just a hyperlink: \url{http://igraph.org}.
+This is another hyperlink: \href{http://igraph.org}{igraph}.
 }
 \author{
 This was written by \emph{Bugs Bunny}, so don't blame me.
@@ -94,6 +97,6 @@ This was written by \emph{Bugs Bunny}, so don't blame me.
 Don't forget to read \emph{Writing R extensions}. Here is a link:
 \url{https://cran.r-project.org/doc/manuals/r-release/R-exts.html}.
 
-Other X.maxygen.examples.: \code{\link{MD2}}
+Other maxygen.examples: \code{\link{MD2}}
 }
 

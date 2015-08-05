@@ -48,14 +48,17 @@
 #'   trim(markdown_rparse(xml, tags))
 #' } 
 #' ```
-#'
-#' @section Links:
-#' This is just a link: [http://igraph.org]().
-#' This is another link: [igraph](http://igraph.org).
 #' 
+#' @section Links:
+#' Link to another manual page: `::MD2`.
+#' Link to a manual page from another package: `maxygen::macument`.
+#'
+#' This is just a hyperlink: [http://igraph.org]().
+#' This is another hyperlink: [igraph](http://igraph.org).
+#'
 #' @param x Markdown is **allowed** for parameters _as well_.
 #' @return This is a _return value_.
-#'
+#' 
 #' @note
 #' Markdown can be used within a _note_, **of course**.
 #'
@@ -74,7 +77,7 @@ MD <- function(x) {
 #' Another example, to have a family
 #'
 #' @param x This is ignored, sorry.
-#' 
+#'
 #' @family maxygen examples
 #' @export
 
