@@ -111,6 +111,24 @@ Emphasis and strong (bold) text is supported:
 #' *SIAM Journal of Computation* **13**, 566-579.
 ```
 
+### Links
+
+Markdown notation can be used to create links to other manual pages.
+There are four kinds of links:
+
+```r
+#' Link to another manual page: [](::my_function).
+#' Link to a manual page from another package: [](maxygen::macument).
+#'
+#' This is a link in the text. Look at [this function](::=my_function).
+#' Also look at [this function in maxygen](maxygen::macument).
+#'
+#' It is possible to make text links verbatim, [`like this`](::=my_function).
+#' Even if they refer to another package,
+#' [`like this`](maxygen::macument).
+#' With quotes: [`"like this"`](maxygen::macument).
+```
+
 ### URLs
 
 URLs are currently not automatically recognized, but Markdown
