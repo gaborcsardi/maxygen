@@ -130,14 +130,7 @@ tags <- list(
   },
 
   code = function(xml) {
-    ## Inline code. Check if it is a link.
-    link <- parse_manual_link(xml)
-    if (!is.null(link)) {
-      if (link$pkg != "") link$pkg <- paste0("[", link$pkg, "]")
-      paste0("\\code{\\link", link$pkg, "{", link$func, "}}")
-    } else {
       list("\\code{", xml_contents(xml), "}")
-    }
   },
 
   inline_html = function(xml) {

@@ -117,21 +117,6 @@ Emphasis and strong (bold) text is supported:
 #' *SIAM Journal of Computation* **13**, 566-579.
 ```
 
-### Links
-
-You can link to other manual pages in the same package with
-` ``::function`` `. You can link to functions from other packages
-with ` ``pkg::function`` `.
-
-```r
-#' `::snap` creates named snapshots of the attached and loaded
-#' R packages. These snapshots can then be restored with
-#' `::restore`.
-#' ...
-#' @seealso `digest::digest` for calculating the hash of an
-#' R object.
-```
-
 ### URLs
 
 URLs are currently not automatically recognized, but Markdown
