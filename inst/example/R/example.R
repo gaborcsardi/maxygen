@@ -4,14 +4,14 @@
 #' @description
 #' Note that you explicitly need to use `@@title`, `@@description` and
 #' also `@@details`.
-#' 
+#'
 #' @details
 #' We test each feature here.
 #'
 #' @section Simple markup:
 #' This is **strong** and there are *both* _emphasized_, probably as
 #' italic.
-#' 
+#'
 #' @section List:
 #' Bulleted list:
 #' * First item.
@@ -46,25 +46,33 @@
 #'   md <- markdown_xml(text, hardbreaks = TRUE)
 #'   xml <- read_xml(md)
 #'   trim(markdown_rparse(xml, tags))
-#' } 
+#' }
 #' ```
-#' 
+#'
 #' @section Links:
-#' Link to another manual page: `::MD2`.
-#' Link to a manual page from another package: `maxygen::macument`.
+#' Link to another manual page: [](::MD2).
+#' Link to a manual page from another package: [](maxygen::macument).
+#'
+#' This is a link in the text. Look at [this function](::=MD2).
+#' Also look at [this function in maxygen](maxygen::macument).
+#'
+#' It is possible to make text links verbatim, [`like this`](::=MD2).
+#' Even if they refer to another package,
+#' [`like this`](maxygen::macument).
+#' With quotes: [`"like this"`](maxygen::macument).
 #'
 #' This is just a hyperlink: [http://igraph.org]().
 #' This is another hyperlink: [igraph](http://igraph.org).
 #'
 #' @param x Markdown is **allowed** for parameters _as well_.
 #' @return This is a _return value_.
-#' 
+#'
 #' @note
 #' Markdown can be used within a _note_, **of course**.
 #'
 #' @author
 #' This was written by _Bugs Bunny_, so don't blame me.
-#' 
+#'
 #' @export
 #' @family maxygen examples
 #' @seealso Don't forget to read _Writing R extensions_. Here is a link:

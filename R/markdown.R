@@ -149,9 +149,15 @@ tags <- list(
   },
 
   link = function(xml) {
-    ## Hyperlink
+    ## Hyperlink, this can also be a link to a function
     dest <- xml_attr(xml, "destination")
-    if (dest == "") {
+    contents <- xml_contents(xml)
+
+    link <- parse_link(dest, contents)
+
+    if (!is.null(link)) {
+      link
+    } else if (dest == "") {
       list("\\url{", xml_contents(xml), "}")
     } else {
       list("\\href{", dest, "}{", xml_contents(xml), "}")
